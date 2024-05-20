@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Menggunakan Ternary Operator</title>
+    <script>
+        function checkAge() {
+            // Meminta pengguna untuk memasukkan usia
+            var usia = parseInt(prompt("Masukkan usia Anda:"));
+
+            // Menggunakan operator ternary untuk menentukan apakah pengguna cukup umur atau tidak
+            var status = (usia >= 18) ? "Anda cukup umur." : "Anda belum cukup umur.";
+
+            // Menampilkan hasil pada elemen dengan id "result"
+            document.getElementById("result").innerHTML = status;
+        }
+    </script>
+</head>
+<body>
+    <h1>Program Menggunakan Ternary Operator</h1>
+    <button onclick="checkAge()">Cek Usia</button>
+    <p id="result"></p>
+</body>
+</html>

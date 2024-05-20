@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Nama dan Alamat Rumah Teman</title>
+    <style>
+        .result {
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function getNamaAlamat() {
+            // Mendapatkan nilai input nama teman
+            var namaTeman = document.getElementById("namaTeman").value;
+
+            // Variabel untuk menyimpan nama dan alamat rumah teman
+            var nama, alamat;
+
+            // Pernyataan multikondisional untuk menentukan nama dan alamat rumah teman
+            switch (namaTeman) {
+                case "Andi":
+                    nama = "Andi";
+                    alamat = "Jalan Merdeka No. 123";
+                    break;
+                case "Budi":
+                    nama = "Budi";
+                    alamat = "Jalan Jendral Sudirman No. 456";
+                    break;
+                case "Cindy":
+                    nama = "Cindy";
+                    alamat = "Jalan Ahmad Yani No. 789";
+                    break;
+                default:
+                    nama = "Teman tidak ditemukan";
+                    alamat = "";
+                    break;
+            }
+
+            // Menampilkan nama dan alamat teman atau pesan error
+            var resultElement = document.getElementById("result");
+            if (nama !== "Teman tidak ditemukan") {
+                resultElement.innerHTML = "<div class='result'>Nama: " + nama + "</div>"
+                    + "<div class='result'>Alamat: " + alamat + "</div>";
+                resultElement.classList.remove("error");
+            } else {
+                resultElement.innerHTML = nama;
+                resultElement.classList.add("error");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Program Nama dan Alamat Rumah Teman</h1>
+    <label for="namaTeman">Nama Teman:</label>
+    <input type="text" id="namaTeman">
+    <br>
+    <button onclick="getNamaAlamat()">Cari Nama dan Alamat</button>
+    <div id="result"></div>
+</body>
+</html>
